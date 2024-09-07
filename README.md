@@ -1,0 +1,1 @@
+# Manga-Text-Remover
