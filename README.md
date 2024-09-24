@@ -3,10 +3,6 @@
 ## Overview
 This application allows you to remove text from images (e.g., manga pages) using EasyOCR and OpenCV. It processes an entire manga folder by detecting and removing text from images within subfolders (chapters) and saves the output in a specified directory.
 
-## Features
-- **Text Detection and Removal**: Uses EasyOCR to detect text in images and OpenCV's inpainting functionality to remove it.
-- **Folder Management**: Automatically processes folders and subfolders to organize input and output files.
-- **Error Handling**: Provides feedback for missing directories, permission issues, and other errors during execution.
 
 ## Prerequisites
 - Python 3.x
@@ -83,42 +79,6 @@ The app will process each chapter folder in the input manga folder and save the 
   
 - **Output**: 
   - Processed images will be saved to `/path/to/output/chapter1/`, `/path/to/output/chapter2/`, etc.
-
-## Functions
-
-### `remove_text_from_image(image_path, output_path)`
-- **Description**: Removes text from an image using EasyOCR for text detection and OpenCV for inpainting.
-- **Parameters**:
-  - `image_path` (str): Path to the input image.
-  - `output_path` (str): Path to save the processed image.
-
-### `get_all_folder_names(directory_path)`
-- **Description**: Returns a list of folder names in the given directory.
-- **Parameters**:
-  - `directory_path` (str): Path to the directory containing folders.
-
-### `get_filenames_in_folder(folder_path)`
-- **Description**: Returns a list of filenames (files only) in the given folder.
-- **Parameters**:
-  - `folder_path` (str): Path to the folder containing files.
-
-### `create_folder(folder_name, folder_path)`
-- **Description**: Creates a new folder if it doesn't already exist and returns the full folder path.
-- **Parameters**:
-  - `folder_name` (str): Name of the folder to create.
-  - `folder_path` (str): Path where the folder should be created.
-
-### `process_manga_folder(manga_folder_path, output_base_folder)`
-- **Description**: Main function to process the manga folder. It iterates through all chapter folders and applies the `remove_text_from_image` function to each image.
-- **Parameters**:
-  - `manga_folder_path` (str): Path to the manga folder containing chapter subfolders.
-  - `output_base_folder` (str): Path to the output folder where processed images will be saved.
-
-## Error Handling
-
-- **FileNotFoundError**: If a directory or file path does not exist.
-- **PermissionError**: If permission is denied for accessing a directory.
-- **Exception**: Generic catch-all for any other runtime errors.
 
 ## License
 This project is open-source and free to use for non-commercial purposes.
